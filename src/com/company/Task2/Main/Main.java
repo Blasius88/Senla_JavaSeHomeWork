@@ -10,14 +10,16 @@ public class Main {
     private static List<Rainbow> rainbows = new ArrayList<>();
 
     public static void main(String[] args) {
+        Start();
+    }
+
+    static void Start (){
         int a = 0;
         int colSizeRainbows= 0;
         for (int i = 0; i <= rainbows.size(); i ++ ){
             colSizeRainbows++;
         }
-
         while (a != -1) {
-
             System.out.println("Make a choice:\n1 - add color;\n2 - bring out all colors\n3 - " +
                     "display color by number\n4 - exit");
             int num =Integer.parseInt(Scan.Sc());
@@ -36,13 +38,28 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("enter id color");
-                    int idCоlor = Integer.parseInt(Scan.Sc());
+                    double idCоlor = Double.parseDouble(Scan.Sc());
                     boolean bool = false;
                     if (colSizeRainbows != 0) {
-                        for (int i = 0; i < rainbows.size(); i++){
+                        for (int i = 0; i < rainbows.size(); i++) {
                             if (rainbows.get(i).getId() == idCоlor) {
                                 System.out.println("id = " + rainbows.get(i).getId() + " - " + rainbows.get(i).getColor());
-                            bool = true;
+                                bool = true;
+                            }
+                            else if ((int) idCоlor != idCоlor) {
+                                int IntIdColor = (int) idCоlor;
+                                try {
+                                    if (rainbows.get(i).getId() == IntIdColor) {
+                                        System.out.println(rainbows.get(i).getColor() + " - " + rainbows.get(i + 1).getColor());
+                                        bool = true;
+                                    }
+                                }
+                                catch (IndexOutOfBoundsException e) {
+                                    if (rainbows.get(i).getId() == IntIdColor) {
+                                        System.out.println(rainbows.get(i).getColor());
+                                        bool = true;
+                                    }
+                                }
                             }
                         }
                         if (!bool) System.out.println("his color is not on the list");
@@ -52,6 +69,7 @@ public class Main {
                     a = -1;
                     break;
                 default:
+                    Start();
                     break;
             }
 

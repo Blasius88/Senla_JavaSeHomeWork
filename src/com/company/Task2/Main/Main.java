@@ -42,10 +42,12 @@ public class Main {
                     boolean bool = false;
                     if (colSizeRainbows != 0) {
                         for (int i = 0; i < rainbows.size(); i++) {
+                            //if the number is an integer we display 1 color
                             if (rainbows.get(i).getId() == idCоlor) {
                                 System.out.println("id = " + rainbows.get(i).getId() + " - " + rainbows.get(i).getColor());
                                 bool = true;
                             }
+                            //if the number is not an integer it outputs a half color
                             else if ((int) idCоlor != idCоlor) {
                                 int IntIdColor = (int) idCоlor;
                                 try {
@@ -53,7 +55,7 @@ public class Main {
                                         System.out.println(rainbows.get(i).getColor() + " - " + rainbows.get(i + 1).getColor());
                                         bool = true;
                                     }
-                                }
+                                }//if there is no next color then 1 number is displayed
                                 catch (IndexOutOfBoundsException e) {
                                     if (rainbows.get(i).getId() == IntIdColor) {
                                         System.out.println(rainbows.get(i).getColor());

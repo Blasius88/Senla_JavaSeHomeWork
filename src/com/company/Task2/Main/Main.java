@@ -4,7 +4,6 @@ import com.company.Task2.Col;
 import com.company.Task2.Rainbox.Rainbow;
 import com.company.Task2.Scan.Scan;
 
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 
@@ -33,7 +32,6 @@ public class Main {
                     rainbows.add(new Rainbow(colSizeRainbows++, Scan.Sc()));
                     break;
                 case 2:
-
                     if (colSizeRainbows != 0) {
                         for (int i = 0; i < rainbows.size(); i++) {
                             System.out.println(rainbows.get(i).getId() + " - " + rainbows.get(i).getColor());
@@ -78,7 +76,6 @@ public class Main {
                     Run();
                     break;
             }
-
         }
     }
 

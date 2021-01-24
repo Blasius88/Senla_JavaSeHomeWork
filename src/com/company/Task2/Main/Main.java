@@ -1,40 +1,44 @@
 package com.company.Task2.Main;
 
+import com.company.Task2.Col;
 import com.company.Task2.Rainbox.Rainbow;
 import com.company.Task2.Scan.Scan;
 
+import java.awt.*;
 import java.util.*;
+import java.util.List;
 
 public class Main {
 
     private static List<Rainbow> rainbows = new ArrayList<>();
 
     public static void main(String[] args) {
-        Start();
+        Run();
     }
 
-    static void Start (){
+    static void Run() {
         int a = 0;
-        int colSizeRainbows= 0;
-        for (int i = 0; i <= rainbows.size(); i ++ ){
+        int colSizeRainbows = 0;
+        ReadColor(colSizeRainbows);
+        for (int i = 0; i <= rainbows.size(); i++) {
             colSizeRainbows++;
         }
         while (a != -1) {
             System.out.println("Make a choice:\n1 - add color;\n2 - bring out all colors\n3 - " +
                     "display color by number\n4 - exit");
-            int num =Integer.parseInt(Scan.Sc());
-            switch (num){
+            int num = Integer.parseInt(Scan.Sc());
+            switch (num) {
                 case 1:
                     System.out.println("enter color ");
-                    rainbows.add( new Rainbow(colSizeRainbows++, Scan.Sc()));
+                    rainbows.add(new Rainbow(colSizeRainbows++, Scan.Sc()));
                     break;
                 case 2:
+
                     if (colSizeRainbows != 0) {
-                        for (int i = 0; i < rainbows.size(); i++){
+                        for (int i = 0; i < rainbows.size(); i++) {
                             System.out.println(rainbows.get(i).getId() + " - " + rainbows.get(i).getColor());
                         }
-                    }
-                    else System.out.println("no colors in the rainbow");
+                    } else System.out.println("no colors in the rainbow");
                     break;
                 case 3:
                     System.out.println("enter id color");
@@ -71,10 +75,17 @@ public class Main {
                     a = -1;
                     break;
                 default:
-                    Start();
+                    Run();
                     break;
             }
 
+        }
+    }
+
+    private static void ReadColor(int a) {
+        Col [] cols = Col.values();
+        for (int i = 0; i < cols.length; i++) {
+            rainbows.add(new Rainbow(a ++,cols[i].toString()));
         }
     }
 }

@@ -26,5 +26,4 @@ public class Rainbow {
         this.color = color;
     }
 
-
 }

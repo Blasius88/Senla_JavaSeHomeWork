@@ -1,6 +1,5 @@
 package com.company.Task3;
 
-import com.company.Task2.Rainbox.Rainbow;
 import com.company.Task2.Scan.Scan;
 
 import java.util.ArrayList;
@@ -13,7 +12,9 @@ public class Main {
     public static void main(String[] args) {
         run();
     }
+
     private static void run (){
+        System.out.println("1 - task 1\n2 - task 2\n3 - task 3\n4 - task 4\nEnter task number ");
         int  a  = Integer.parseInt(Scan.Sc());
         switch (a){
             case 1:
@@ -58,6 +59,7 @@ public class Main {
             System.out.println("Name cat = " + cats.get(i).name + "\nCat age = " + cats.get(i).old);
         }
     }
+
     private static void task3 () {
         List <Cat> cat = new ArrayList<>();
         int i = 0;
@@ -71,7 +73,6 @@ public class Main {
             cat.add(new Cat(name, old));
             i++;
         } while (i != 10);
-
     }
 
     private static void task4 (){
@@ -88,6 +89,5 @@ public class Main {
         for (Cat cat1: cat) {
             System.out.println(cat1.name + " " + cat1.old);
         }
-
     }
 }

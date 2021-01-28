@@ -121,9 +121,16 @@ public class Main {
     }
 
     static boolean checkNum(String s) {
-            String str = String.valueOf(s);
-            return str.matches("-?\\d+(\\.\\d+)?");
+        try {
+            Double.parseDouble(s);
+            return true;
         }
+        catch (NumberFormatException e) {
+            return false;
+        }
+        //String str = String.valueOf(s);
+        //return str.matches("-?\\d+(\\.\\d+)?");
+    }
 
     static void checkNumber (String [][] arr){
         ArrayList<Integer> mas = new ArrayList<>();

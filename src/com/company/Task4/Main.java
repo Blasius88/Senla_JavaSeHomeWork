@@ -120,6 +120,7 @@ public class Main {
         return mas;
     }
 
+    //does not work
     static boolean checkNum(String s) {
         try {
             Double.parseDouble(s);
@@ -128,6 +129,7 @@ public class Main {
         catch (NumberFormatException e) {
             return false;
         }
+
         //String str = String.valueOf(s);
         //return str.matches("-?\\d+(\\.\\d+)?");
     }

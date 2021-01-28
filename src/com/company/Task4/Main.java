@@ -138,7 +138,7 @@ public class Main {
                     System.out.println("Element[" + i + "][" + j + "] - string : " + arr[i][j]);
                     StringBuffer buffer = new StringBuffer(arr[i][j]);
                     char [] chars = new char[3];
-                    buffer.getChars(2,4, chars, 0);
+                    buffer.getChars(1,5, chars, 0);
                     printChar(chars);
                 }
             }

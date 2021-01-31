@@ -22,7 +22,7 @@ public class Main {
         printMas(arr);
         System.out.println("check the number or string in the array");
         checkNumber(arr);
-        System.out.println("source array");
+        System.out.println("\nsource array");
         printMas(mas);
 
 
@@ -120,18 +120,15 @@ public class Main {
         return mas;
     }
 
-    //does not work
     static boolean checkNum(String s) {
         try {
-            Double.parseDouble(s);
+            String str = s.replace(',', '.');
+            Double.parseDouble(str);
             return true;
         }
         catch (NumberFormatException e) {
             return false;
         }
-
-        //String str = String.valueOf(s);
-        //return str.matches("-?\\d+(\\.\\d+)?");
     }
 
     static void checkNumber (String [][] arr){
@@ -140,9 +137,9 @@ public class Main {
             for (int j = 0; j < arr[i].length; j ++) {
                 if (checkNum(arr[i][j])) {
                     System.out.println("Element[" + i + "][" + j + "] - number ");
-                    System.out.println("Element[" + i + "][" + j + "] = " + arr[i][j] + "\nround it up : " + Math.round(Double.parseDouble(arr[i][j])));
-                    double temp =  Math.round(Double.parseDouble(arr[i][j]));
-                    mas.add(Integer.parseInt(String.valueOf(temp)));
+                    System.out.println("Element[" + i + "][" + j + "] = " + arr[i][j] + "\nround it up : " + Math.round(Double.parseDouble(arr[i][j].replace(',', '.'))));
+                    double temp =  Math.round(Double.parseDouble(arr[i][j].replace(',','.')));
+                    mas.add((int) temp);
                 } else {
                     System.out.println("Element[" + i + "][" + j + "] - string : " + arr[i][j]);
                     StringBuffer buffer = new StringBuffer(arr[i][j]);

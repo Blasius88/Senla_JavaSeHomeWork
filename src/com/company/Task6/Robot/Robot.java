@@ -7,39 +7,48 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Robot implements IRobot {
+    private String name;
+    private String body;
+    private String head;
 
-    @Override
-    public String name(int i) {
-        return "Robot " + i ;
+    public Robot(){}
+
+    public Robot(String name, String body, String head) {
+        this.name = name;
+        this.body = body;
+        this.head = head;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
+
+    public String getHead() {
+        return head;
+    }
+
+    public void setHead(String head) {
+        this.head = head;
     }
 
     @Override
-    public String head(int randomGen) {
-        List<String> head = new ArrayList<>();
-        for (Head x: Head.values()) {
-            head.add(x.toString());
-        }
-        String headName ="";
-        for (int i = 0; i < head.size(); i ++){
-            if (i == randomGen){
-                headName = head.get(i).toString();
-            }
-        }
-        return headName;
-    }
-
-    @Override
-    public String body(int randomGen) {
-        List<String> body = new ArrayList<>();
-        for (Body x: Body.values()) {
-            body.add(x.toString());
-        }
-        String bodyName ="";
-        for (int i = 0; i < body.size(); i ++){
-            if (i == randomGen){
-                bodyName = body.get(i).toString();
-            }
-        }
-        return bodyName;
+    public String toString() {
+        return "Robot{" +
+                "name='" + name + '\'' +
+                ", body='" + body + '\'' +
+                ", head='" + head + '\'' +
+                '}';
     }
 }

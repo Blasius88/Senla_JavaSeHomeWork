@@ -20,9 +20,6 @@ public class Main {
         for (int i = 0; i < robotObjekt.size(); i ++ ) {
             System.out.println(robotObjekt.get(i).toString());
         }
-
-
-
     }
 
     private static int randomGen (){

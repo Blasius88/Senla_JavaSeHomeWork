@@ -4,13 +4,13 @@ public class Port {
 
     private int dockForShip;
 
-    private int masVater;
+    private int masWater;
 
     public Port(){}
 
     public Port(int dockForShip, int masVater){
         this.dockForShip = dockForShip;
-        this.masVater = masVater;
+        this.masWater = masVater;
     }
 
     public int getDockForShip() {
@@ -19,17 +19,17 @@ public class Port {
     public void setDockForShip(int dockForShip) {
         this.dockForShip = dockForShip;
     }
-    public int getMasVater() {
-        return masVater;
+    public int getMasWater() {
+        return masWater;
     }
 
-    public void setMasVater(int masVater) {
-        this.masVater = masVater;
+    public void setMasWater(int masWater) {
+        this.masWater = masWater;
     }
 
 
     @Override
     public String toString() {
-        return "" +dockForShip + " boats arrived at the port and delivered " + masVater + " units of water\n";
+        return "" +dockForShip + " boats arrived at the port and delivered " + masWater + " units of water\n";
     }
 }
